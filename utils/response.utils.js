@@ -28,9 +28,8 @@ exports.errors = function (req, res, errors) {
             }
         }
     }else {
-        var response = {
+        response = {
             statusCode: errors.statusCode,
-            data: {},
             errors: [
                 {
                     errorCode: errors.errorCode,
