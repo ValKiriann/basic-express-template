@@ -28,15 +28,13 @@ exports.errors = function (req, res, errors) {
             }
         }
     }else {
-        response = {
-            statusCode: errors.statusCode,
-            errors: [
-                {
-                    errorCode: errors.errorCode,
-                    errorData: errors.errorData
-                }
-            ]
-        };
+        response.statusCode = errors.statusCode;
+        response.errors = [
+            {
+                errorCode: errors.errorCode,
+                errorData: errors.errorData
+            }
+        ];
     }   
 
     res.status(response.statusCode).send(response);
