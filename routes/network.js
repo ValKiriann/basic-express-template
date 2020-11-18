@@ -15,7 +15,8 @@ router.get('/ping', function(req,res){
 
 router.post('/test/body', function(req,res){ 
     if(req.body.error) {
-        responseUtils.errors(req,res, {statusCode:500, errorCode: "Internal Error", errorData: "Contact administrator"})
+        //return responseUtils.errors(res, error, error.statusCode) when inside a trycatch
+        return responseUtils.errors(res, { errorCode: "Internal Error", errorData: "Contact administrator"})
     } else {
         responseUtils.success(req,res,req.body);
     }
